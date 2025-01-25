@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>{{tituloAccion}} Usuario</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="formularioUsuario">
+    <mat-grid-list cols="1" rowHeight="80px">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre Competencia</mat-label>
+                <input matInput autocomplete="off" formControlName="nombre">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="fill">
+                <mat-label>Fecha Final</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="fecha">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+              
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Descripcion competencia</mat-label>
+                <input matInput autocomplete="off" formControlName="descripcion">
+                <mat-icon matSuffix>assignment_ind</mat-icon>
+            </mat-form-field>
+        </mat-grid-tile>
+
+       
+        
+    </mat-grid-list>
+  </form>
+</mat-dialog-content>
+
+
+<mat-dialog-actions aling="end">
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button  color="primary"
+        [disabled]="formularioUsuario.invalid"
+        (click)="guardarEditar_Usuario()"
+    >{{botonAccion}}</button>
+</mat-dialog-actions>
+

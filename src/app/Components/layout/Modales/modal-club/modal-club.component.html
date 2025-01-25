@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>{{tituloAccion}} Usuario</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="formularioUsuario">
+    <mat-grid-list cols="1" rowHeight="80px">
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre Club</mat-label>
+                <input matInput autocomplete="off" formControlName="nombre">
+                <mat-icon matSuffix>person</mat-icon>
+            </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre Responsable del Club</mat-label>
+                <input matInput autocomplete="off" formControlName="nombreResponsable">
+                <mat-icon matSuffix>assignment_ind</mat-icon>
+            </mat-form-field>
+        </mat-grid-tile>
+
+       
+        
+    </mat-grid-list>
+  </form>
+</mat-dialog-content>
+
+
+<mat-dialog-actions aling="end">
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button  color="primary"
+        [disabled]="formularioUsuario.invalid"
+        (click)="guardarEditar_Usuario()"
+    >{{botonAccion}}</button>
+</mat-dialog-actions>
+

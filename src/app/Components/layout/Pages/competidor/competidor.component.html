@@ -1,0 +1,107 @@
+<h1 style="margin: 20px 0px 0px 40px">Competidor</h1>
+<mat-card style="margin: 20px 40px 40px 40px">
+    <!-- Aquí puedes agregar contenido dentro del mat-card -->
+    <mat-card-title>
+        <button mat-raised-button color="primary" (click)="nuevoUsuario()">
+            <mat-icon mat-list-icon>add</mat-icon>Nuevo Competidor
+        </button>
+    </mat-card-title>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content class="dashboard-card-content">
+  <!-- 
+        <mat-form-field appearance="outline">
+                <mat-label>Buscar</mat-label>
+                <input matInput (keyup)="aplicarFiltroTabla($event)"#input>
+        </mat-form-field><object data="" type=""></object>
+    -->
+
+        <mat-form-field appearance="outline">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="aplicarFiltroTablaLocal($event)" placeholder="Buscar por nombre o correo">
+          </mat-form-field>
+          
+        <div class="mat-elevation-z2">
+            <table mat-table [dataSource]="dataListaCompetidores">
+
+                <ng-container matColumnDef="nombre">
+                    <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                    <td mat-cell *matCellDef="let element"> {{element.cmp_nombre}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="peso">
+                    <th mat-header-cell *matHeaderCellDef> Peso </th>
+                    <td mat-cell *matCellDef="let element"> {{element.cmp_peso}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="cedula">
+                    <th mat-header-cell *matHeaderCellDef> Cédula </th>
+                    <td mat-cell *matCellDef="let element"> {{element.cmp_cedula}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="color">
+                    <th mat-header-cell *matHeaderCellDef> Color </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ran_color}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="experto">
+                    <th mat-header-cell *matHeaderCellDef> Nivel experto </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ran_experto}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nombreclub">
+                    <th mat-header-cell *matHeaderCellDef> Nombre Club </th>
+                    <td mat-cell *matCellDef="let element"> {{element.clu_nombre}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="nombreResponsable">
+                    <th mat-header-cell *matHeaderCellDef> Nombre responsable Club </th>
+                    <td mat-cell *matCellDef="let element"> {{element.clu_nom_resp}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="edad">
+                    <th mat-header-cell *matHeaderCellDef> Edad </th>
+                    <td mat-cell *matCellDef="let element"> {{element.edad}} </td>
+                </ng-container>
+
+
+
+
+                <ng-container matColumnDef="acciones">
+                    <th mat-header-cell *matHeaderCellDef style="width: 80px;"></th>
+                    <td mat-cell *matCellDef="let element"> 
+                      <button mat-icon-button color="primary" (click)="editarUsuario(element)">
+                        <mat-icon>edit</mat-icon>
+                      </button>
+                      <button mat-icon-button color="warn" (click)="eliminarUsuario(element)">
+                        <mat-icon>delete</mat-icon>
+                      </button>
+                    </td>
+                </ng-container>
+                  
+
+                <tr mat-header-row *matHeaderRowDef="columnasTable"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnasTable; "></tr>
+<!-- 
+                <tr class="mat-row" *matNote>
+                    <td class="mat-cell" colspan="4">
+                            No hay datos que coincidan con el filtro "{{input.value}}"
+                    </td>
+                </tr>
+
+-->
+
+                  
+
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[5,10,20]" showFirstLastButtons>
+
+            </mat-paginator>
+        </div>
+
+
+    </mat-card-content>
+</mat-card>
+  

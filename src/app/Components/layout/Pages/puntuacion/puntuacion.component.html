@@ -1,0 +1,87 @@
+<h1>Ingreso Puntaje</h1>
+
+<div>
+  <h2>Pelea - {{ peleaId }}</h2>
+  <div>
+    <p>Rival 1: {{ rival1.cmp_nombre }} - Color: {{ rival1.riv_color }}</p>
+    <p>Rival 2: {{ rival2.cmp_nombre }} - Color: {{ rival2.riv_color }}</p>
+  </div>
+</div>
+
+<button mat-raised-button color="primary" (click)="volverALaLista()">Volver</button>
+<button mat-raised-button color="accent" (click)="finalizarPelea()">Finalizar Pelea</button>
+
+
+<h2>Registrar Puntaje</h2>
+
+<mat-card style="padding: 20px;">
+  <form [formGroup]="formularioPuntaje" (ngSubmit)="registrarPuntaje()">
+    <mat-form-field appearance="outline">
+      <mat-label>Selecciona Rival</mat-label>
+      <mat-select formControlName="riv_id" required>
+        <mat-option [value]="rival1.riv_id">{{ rival1.cmp_nombre }}</mat-option>
+        <mat-option [value]="rival2.riv_id">{{ rival2.cmp_nombre }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Selecciona Técnica</mat-label>
+      <mat-select formControlName="tec_id" required>
+        <mat-option *ngFor="let tecnica of listaTecnicas" [value]="tecnica.tec_id">
+          {{ tecnica.tec_nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Segundo de Puntuación</mat-label>
+      <input matInput type="number" formControlName="pun_min" placeholder="Ej: 10, 15, 20" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="formularioPuntaje.invalid">Registrar Puntaje</button>
+  </form>
+</mat-card>
+
+<h1 style="margin: 20px 0px 0px 40px">Puntajes Registrados</h1>
+<mat-card style="margin: 20px 40px 40px 40px">
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSourcePuntajes" class="mat-elevation-z2">
+            
+            <!-- Columna Nombre del Competidor -->
+            <ng-container matColumnDef="cmp_nombre">
+                <th mat-header-cell *matHeaderCellDef> Competidor </th>
+                <td mat-cell *matCellDef="let element"> {{element.cmp_nombre}} </td>
+            </ng-container>
+
+            <!-- Columna Color del Rival -->
+            <ng-container matColumnDef="rival_color">
+                <th mat-header-cell *matHeaderCellDef> Color </th>
+                <td mat-cell *matCellDef="let element"> {{element.rival1_color}} </td>
+            </ng-container>
+
+            <!-- Columna Técnica -->
+            <ng-container matColumnDef="tec_nombre">
+                <th mat-header-cell *matHeaderCellDef> Técnica </th>
+                <td mat-cell *matCellDef="let element"> {{element.tec_nombre}} </td>
+            </ng-container>
+
+            <!-- Columna Puntos -->
+            <ng-container matColumnDef="tec_puntos">
+                <th mat-header-cell *matHeaderCellDef> Puntos </th>
+                <td mat-cell *matCellDef="let element"> {{element.tec_puntos}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="acciones">
+                <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="warn" (click)="eliminarPuntaje(element.pun_id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card-content>
+</mat-card>

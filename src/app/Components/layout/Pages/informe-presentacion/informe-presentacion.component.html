@@ -1,0 +1,40 @@
+<h1>Informe de Top Competidores</h1>
+
+<!-- Combo de Competencias -->
+<mat-form-field appearance="outline" style="width: 300px; margin-bottom: 20px;">
+  <mat-label>Seleccionar Competencia</mat-label>
+  <mat-select [(ngModel)]="competenciaSeleccionada">
+    <mat-option *ngFor="let competencia of listaCompetencias" [value]="competencia.com_id">
+      {{ competencia.com_nombre }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Botón para generar el informe -->
+<button mat-raised-button color="primary" (click)="obtenerTopCompetidores()">Generar Informe</button>
+
+<!-- Tabla para mostrar el informe -->
+<table mat-table [dataSource]="dataSourceInforme" class="mat-elevation-z8" style="width: 100%; margin-top: 20px;">
+  <ng-container matColumnDef="competidorNombre">
+    <th mat-header-cell *matHeaderCellDef> Competidor </th>
+    <td mat-cell *matCellDef="let element"> {{ element.competidorNombre }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="promedioTiempo">
+    <th mat-header-cell *matHeaderCellDef> Promedio de Tiempo </th>
+    <td mat-cell *matCellDef="let element"> {{ element.promedioTiempo | number:'1.2-2' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="promedioPuntos">
+    <th mat-header-cell *matHeaderCellDef> Promedio de Puntos </th>
+    <td mat-cell *matCellDef="let element"> {{ element.promedioPuntos | number:'1.2-2' }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="tecnicaMasEmpleada">
+    <th mat-header-cell *matHeaderCellDef> Técnica Más Empleada </th>
+    <td mat-cell *matCellDef="let element"> {{ element.tecnicaMasEmpleada }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
