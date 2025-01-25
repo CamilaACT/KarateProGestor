@@ -11,7 +11,7 @@ import { PeleaAPelea } from '../interfaces/pelea-a-pelea';
 })
 export class PeleaService {
 
-  private urlApi:string=environment.apiUrl + "Pelea/";
+  private urlApi:string="https://serviciopeleakaratepro.onrender.com" + "Pelea/";
 
   constructor(private http:HttpClient) { }
 

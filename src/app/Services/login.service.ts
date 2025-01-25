@@ -12,7 +12,7 @@ import { UsuarioAUsuario } from '../interfaces/usuario-a-usuario';
 })
 export class LoginService {
 
-  private urlApi:string=environment.apiUrl + "Login/";
+  private urlApi:string="https://serviciousuariokaratepro.onrender.com" + "Login/";
 
   constructor(private http:HttpClient) { }
 

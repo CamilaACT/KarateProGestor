@@ -12,7 +12,7 @@ import { PuntuacionAPuntuacion } from '../interfaces/puntuacion-a-puntuacion';
 })
 export class PuntuacionService {
 
-  private urlApi:string=environment.apiUrl + "Puntuacion/";
+  private urlApi:string="https://serviciopeleakaratepro.onrender.com" + "Puntuacion/";
 
   constructor(private http:HttpClient) { }
 

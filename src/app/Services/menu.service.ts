@@ -11,7 +11,7 @@ import { Usuario } from '../interfaces/usuario';
   providedIn: 'root'
 })
 export class MenuService {
-  private urlApi:string=environment.apiUrl + "Menu/";
+  private urlApi:string="https://serviciousuariokaratepro.onrender.com" + "Menu/";
 
   constructor(private http:HttpClient) { }  
 

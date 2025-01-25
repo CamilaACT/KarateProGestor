@@ -13,7 +13,7 @@ import { UsuarioAUsuario } from '../interfaces/usuario-a-usuario';
 })
 export class InformeService {
 
-  private urlApi:string=environment.apiUrl + "Informe/";
+  private urlApi:string="https://serviciocompetidorkaratepro.onrender.com" + "Informe/";
 
   constructor(private http:HttpClient) { }
 
