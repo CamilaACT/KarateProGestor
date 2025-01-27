@@ -26,10 +26,10 @@ export class LayoutComponent {
       { label: 'Roles', icon: 'supervisor_account', route: '/pages/roles', rolesAllowed: ['Administrador'] },
       { label: 'Competidores', icon: 'sports', route: '/pages/competidores', rolesAllowed: ['Administrador'] },
       { label: 'Pelea', icon: 'sports_kabaddi', route: '/pages/peleas', rolesAllowed: ['Administrador'] },
-      { label: 'informeclub', icon: 'bar_chart', route: '/pages/informeclub', rolesAllowed: ['Administrador'] },
-      { label: 'informeCompetidores', icon: 'analytics', route: '/pages/InformeCompetidorListaComponent', rolesAllowed: ['Administrador'] },
-      { label: 'informeEdades', icon: 'calendar_today', route: '/pages/InformeEdadComponent', rolesAllowed: ['Administrador'] },
-      { label: 'InformePresentacionComponent', icon: 'insert_chart', route: '/pages/InformePresentacionComponent', rolesAllowed: ['Administrador'] },
+      { label: 'Informe por Clubes', icon: 'bar_chart', route: '/pages/informeclub', rolesAllowed: ['Administrador'] },
+      { label: 'Informe por Competidores', icon: 'analytics', route: '/pages/InformeCompetidorListaComponent', rolesAllowed: ['Administrador'] },
+      { label: 'informeEdades', icon: 'calendar_today', route: '/pages/InformeEdadComponent', rolesAllowed: [] },
+      { label: 'InformePresentacionComponent', icon: 'insert_chart', route: '/pages/InformePresentacionComponent', rolesAllowed: [] },
       
   ];
 
