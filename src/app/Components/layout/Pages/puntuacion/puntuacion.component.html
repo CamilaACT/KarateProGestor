@@ -1,26 +1,66 @@
+
+<div class="page-container">
+
+
+
 <h1>Ingreso Puntaje</h1>
 
 <div>
   <h2>Pelea - {{ peleaId }}</h2>
   <div>
-    <p>Rival 1: {{ rival1.cmp_nombre }} - Color: {{ rival1.riv_color }}</p>
-    <p>Rival 2: {{ rival2.cmp_nombre }} - Color: {{ rival2.riv_color }}</p>
+    <!-- Rival 1 -->
+    <p>
+      Rival 1: 
+      <span [ngStyle]="{ 'font-weight': 'bold', 'color': colorMap[rival1.riv_color] || 'black' }">
+        {{ rival1.cmp_nombre }}
+      </span>
+      - 
+      <span 
+        [ngStyle]="{ 'background-color': colorMap[rival1.riv_color] || 'gray', 'display': 'inline-block', 'width': '15px', 'height': '15px', 'border-radius': '50%', 'margin-left': '5px' }">
+      </span>
+    </p>
+
+    <!-- Rival 2 -->
+    <p>
+      Rival 2: 
+      <span [ngStyle]="{ 'font-weight': 'bold', 'color': colorMap[rival2.riv_color] || 'black' }">
+        {{ rival2.cmp_nombre }}
+      </span>
+      - 
+      <span 
+        [ngStyle]="{ 'background-color': colorMap[rival2.riv_color] || 'gray', 'display': 'inline-block', 'width': '15px', 'height': '15px', 'border-radius': '50%', 'margin-left': '5px' }">
+      </span>
+    </p>
   </div>
 </div>
 
-<button mat-raised-button color="primary" (click)="volverALaLista()">Volver</button>
-<button mat-raised-button color="accent" (click)="finalizarPelea()">Finalizar Pelea</button>
+<button mat-raised-button color="primary" style="margin-right: 10px;"  (click)="volverALaLista() ">Volver a la lista de peleas</button>
+
+<button 
+  mat-raised-button 
+  [ngStyle]="{ 'background-color': 'green', 'color': 'white' }" 
+  (click)="finalizarPelea()">Finalizar Pelea
+</button>
 
 
 <h2>Registrar Puntaje</h2>
 
 <mat-card style="padding: 20px;">
   <form [formGroup]="formularioPuntaje" (ngSubmit)="registrarPuntaje()">
+
     <mat-form-field appearance="outline">
       <mat-label>Selecciona Rival</mat-label>
       <mat-select formControlName="riv_id" required>
-        <mat-option [value]="rival1.riv_id">{{ rival1.cmp_nombre }}</mat-option>
-        <mat-option [value]="rival2.riv_id">{{ rival2.cmp_nombre }}</mat-option>
+        <mat-option 
+        [value]="rival1.riv_id" 
+        [ngStyle]="{ 'background-color': colorMap[rival1.riv_color] || 'white', 'color': 'white' }">
+        {{ rival1.cmp_nombre }}
+      </mat-option>
+      <mat-option 
+        [value]="rival2.riv_id" 
+        [ngStyle]="{ 'background-color': colorMap[rival2.riv_color] || 'white', 'color': 'white' }">
+        {{ rival2.cmp_nombre }}
+      </mat-option>
       </mat-select>
     </mat-form-field>
 
@@ -54,9 +94,14 @@
             </ng-container>
 
             <!-- Columna Color del Rival -->
+      
             <ng-container matColumnDef="rival_color">
-                <th mat-header-cell *matHeaderCellDef> Color </th>
-                <td mat-cell *matCellDef="let element"> {{element.rival1_color}} </td>
+              <th mat-header-cell *matHeaderCellDef> Color </th>
+              <td mat-cell *matCellDef="let element">
+                <span [ngStyle]="{ 'background-color': colorMap[element.rival1_color] || 'gray', 'color': 'white', 'padding': '3px 5px', 'border-radius': '4px' }">
+                  {{ element.rival1_color }}
+                </span>
+              </td>
             </ng-container>
 
             <!-- Columna Técnica -->
@@ -85,3 +130,4 @@
         </table>
     </mat-card-content>
 </mat-card>
+</div>

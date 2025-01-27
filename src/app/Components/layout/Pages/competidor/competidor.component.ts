@@ -92,7 +92,7 @@ export class CompetidorComponent implements OnInit,AfterViewInit {
     eliminarUsuario(competidor:CompetidorCTCompetidor){
       Swal.fire({
   
-        title:"¿Desea eliminar el usuario?",
+        title:"¿Desea eliminar el competidor?",
         text:competidor.cmp_nombre,
         icon:"warning",
         confirmButtonColor:"#3085d6",

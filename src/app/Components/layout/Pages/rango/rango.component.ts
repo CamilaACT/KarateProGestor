@@ -89,7 +89,7 @@ obtenerUsuarios(){
   eliminarUsuario(rango:RangoARango){
     Swal.fire({
 
-      title:"¿Desea eliminar el usuario?",
+      title:"¿Desea eliminar el rango?",
       text:rango.ran_color,
       icon:"warning",
       confirmButtonColor:"#3085d6",

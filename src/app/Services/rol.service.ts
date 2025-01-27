@@ -12,7 +12,7 @@ import { Rol } from '../interfaces/rol';
   providedIn: 'root'
 })
 export class RolService {
-  private urlApi:string=environment.apiUrl + "Rol/";
+  private urlApi:string="https://serviciousuariokaratepro.onrender.com/api/" + "Rol/";
 
   constructor(private http:HttpClient) { }  
   listaRoles(request:number):Observable<ResponseApi>{

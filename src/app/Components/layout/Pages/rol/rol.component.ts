@@ -93,7 +93,7 @@ obtenerUsuarios(){
   eliminarUsuario(rol:Rol){
     Swal.fire({
 
-      title:"¿Desea eliminar el usuario?",
+      title:"¿Desea eliminar el rol?",
       text:rol.rol_nombre,
       icon:"warning",
       confirmButtonColor:"#3085d6",

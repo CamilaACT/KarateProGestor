@@ -11,7 +11,7 @@ import { CompetenciaACompetencia } from '../interfaces/competencia-a-competencia
 })
 export class CompetenciaService {
 
-  private urlApi:string="https://serviciocompetenciakaratepro.onrender.com" + "Competencia/";
+  private urlApi:string="https://serviciocompetenciakaratepro.onrender.com/api/" + "Competencia/";
 
   constructor(private http:HttpClient) { }
 

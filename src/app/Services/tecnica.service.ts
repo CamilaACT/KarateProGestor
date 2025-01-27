@@ -11,7 +11,7 @@ import { TecnicaATecnica } from '../interfaces/tecnica-a-tecnica';
 })
 export class TecnicaService {
 
-  private urlApi:string=environment.apiUrl + "Tecnica/";
+  private urlApi:string="https://serviciopeleakaratepro.onrender.com/api/" + "Tecnica/";
 
   constructor(private http:HttpClient) { }
 

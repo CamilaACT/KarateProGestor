@@ -10,7 +10,7 @@ import { ClubAClub } from '../interfaces/club-a-club';
 })
 export class ClubService {
 
-  private urlApi:string="https://serviciocompetenciakaratepro.onrender.com"+ "Club/";
+  private urlApi:string="https://serviciocompetenciakaratepro.onrender.com/api/"+ "Club/";
 
   constructor(private http:HttpClient) { }
 

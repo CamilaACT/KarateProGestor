@@ -14,7 +14,7 @@ import { CompetidorACompetidor } from '../interfaces/competidor-a-competidor';
 })
 export class CompetidorService {
 
-  private urlApi:string="https://serviciocompetidorkaratepro.onrender.com"+ "Competidor/";
+  private urlApi:string="https://serviciocompetidorkaratepro.onrender.com/api/"+ "Competidor/";
 
   constructor(private http:HttpClient) { }
 

@@ -92,7 +92,7 @@ obtenerUsuarios(){
   eliminarUsuario(tecnica:TecnicaATecnica){
     Swal.fire({
 
-      title:"¿Desea eliminar el usuario?",
+      title:"¿Desea eliminar la técnica?",
       text:tecnica.tec_nombre,
       icon:"warning",
       confirmButtonColor:"#3085d6",

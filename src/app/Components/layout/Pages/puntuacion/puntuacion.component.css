@@ -1,10 +1,27 @@
-table{
-    width:100%,
-
-
-}
-
-.mat-form-field{
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
     font-size: 14px;
-    width:100%,
-}
+    width: 100%;
+  }
+  
+  .color-label {
+    display: inline-block;
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  ::ng-deep .mat-select-panel mat-option {
+    color: inherit !important; /* Asegura que se herede el color definido en ngStyle */
+  }
+  
+  .page-container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }

@@ -26,6 +26,16 @@ export class PuntuacionComponent implements OnInit {
   dataSourcePuntajes = new MatTableDataSource<any>();
 
 
+  // Mapeo de colores en español a valores CSS válidos
+  colorMap: { [key: string]: string } = {
+    Rojo: '#FF0000',
+    Azul: '#0000FF',
+    Verde: '#008000',
+    Amarillo: '#FFFF00',
+    Negro: '#000000',
+    Blanco: '#FFFFFF'
+  };
+
   constructor(
     private route: ActivatedRoute,
     private peleaService: PeleaService,

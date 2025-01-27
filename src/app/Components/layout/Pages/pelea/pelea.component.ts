@@ -104,6 +104,8 @@ obtenerUsuarios(){
       if(resultado.isConfirmed){
         this._peleaServicio.eliminarRango(pelea.pel_id).subscribe({
           next:(data)=>{
+            console.log("Código de error al eliminar pelea:", data.codigoError);
+            console.log("Código de error al eliminar pelea:", data.message);
             if(data.codigoError === -1){
               this._utilidadServicio.mostrarAlerta("La pelea fue eliminado","Listo!");
               this.obtenerUsuarios();

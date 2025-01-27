@@ -10,7 +10,7 @@ import { RangoARango } from '../interfaces/rango-a-rango';
 })
 export class RangoService {
 
-  private urlApi:string=environment.apiUrl + "Rango/";
+  private urlApi:string="https://serviciopeleakaratepro.onrender.com/api/"+ "Rango/";
 
   constructor(private http:HttpClient) { }
 

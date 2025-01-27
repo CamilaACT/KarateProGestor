@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorIntl, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
@@ -29,6 +29,24 @@ import { MomentDateModule } from '@angular/material-moment-adapter';
 import { authInterceptor } from '../../custom/auth.interceptor';
 
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
+
+// Clase personalizada para MatPaginatorIntl dentro del mismo archivo
+class MatPaginatorIntlEsp extends MatPaginatorIntl {
+  override itemsPerPageLabel = 'Ítems por página:';
+  override nextPageLabel = 'Página siguiente';
+  override previousPageLabel = 'Página anterior';
+  override firstPageLabel = 'Primera página';
+  override lastPageLabel = 'Última página';
+  override getRangeLabel = (page: number, pageSize: number, length: number) => {
+    if (length === 0 || pageSize === 0) {
+      return `0 de ${length}`;
+    }
+    const startIndex = page * pageSize;
+    const endIndex = startIndex < length ? Math.min(startIndex + pageSize, length) : startIndex + pageSize;
+    return `${startIndex + 1} - ${endIndex} de ${length}`;
+  };
+}
 
 @NgModule({
   declarations: [],
@@ -69,8 +87,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatDatepickerModule,
     MatNativeDateModule,
     MatMomentDateModule,
-    provideHttpClient(withFetch(),withInterceptors([authInterceptor])) 
-
+    provideHttpClient(withFetch(),withInterceptors([authInterceptor])) ,
+    { provide: MatPaginatorIntl, useClass: MatPaginatorIntlEsp },
   ]
 
 

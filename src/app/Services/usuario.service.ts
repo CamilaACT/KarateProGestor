@@ -14,7 +14,7 @@ import { UsuarioAUsuario } from '../interfaces/usuario-a-usuario';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private urlApi:string=environment.apiUrl + "Usuario/";
+  private urlApi:string="https://serviciousuariokaratepro.onrender.com/api/" + "Usuario/";
 
   constructor(private http:HttpClient) { }
 

@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>{{tituloAccion}} Usuario</h2>
+<h2 mat-dialog-title>{{tituloAccion}} Competencia</h2>
 
 <mat-dialog-content>
   <form [formGroup]="formularioUsuario">
@@ -13,7 +13,7 @@
 
         <mat-grid-tile>
             <mat-form-field appearance="fill">
-                <mat-label>Fecha Final</mat-label>
+                <mat-label>Fecha </mat-label>
                 <input matInput [matDatepicker]="picker2" formControlName="fecha">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>

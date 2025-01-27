@@ -92,7 +92,7 @@ obtenerUsuarios(){
   eliminarUsuario(club:ClubAClub){
     Swal.fire({
 
-      title:"¿Desea eliminar el usuario?",
+      title:"¿Desea eliminar el club?",
       text:club.clu_nombre,
       icon:"warning",
       confirmButtonColor:"#3085d6",

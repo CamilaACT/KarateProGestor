@@ -18,18 +18,18 @@ interface MenuOption {
 export class LayoutComponent {
 
     menuOptions: MenuOption[] = [
-      { label: 'Usuarios', icon: 'group', route: '/pages/usuarios', rolesAllowed: ['Administrador'] },
-      { label: 'Rangos', icon: 'military_tech', route: '/pages/rangos', rolesAllowed: [] },
-      { label: 'Clubes', icon: 'groups', route: '/pages/clubes', rolesAllowed: ['Director de clubes'] },
+      { label: 'Usuarios', icon: 'person', route: '/pages/usuarios', rolesAllowed: ['Administrador'] },
+      { label: 'Rangos', icon: 'star', route: '/pages/rangos', rolesAllowed: ['Administrador'] },
+      { label: 'Clubes', icon: 'business', route: '/pages/clubes', rolesAllowed: ['Director de clubes','Administrador'] },
       { label: 'Competencias', icon: 'emoji_events', route: '/pages/competencias', rolesAllowed: [ 'Administrador'] },
-      { label: 'Técnicas', icon: 'sports_martial_arts', route: '/pages/tecnicas', rolesAllowed: [] },
-      { label: 'Roles', icon: 'admin_panel_settings', route: '/pages/roles', rolesAllowed: [] },
-      { label: 'Competidores', icon: 'sports_kabaddi', route: '/pages/competidores', rolesAllowed: [] },
-      { label: 'Pelea', icon: 'sports_martial_arts', route: '/pages/peleas', rolesAllowed: [] },
-      { label: 'informeclub', icon: 'sports_martial_arts', route: '/pages/informeclub', rolesAllowed: [] },
-      { label: 'informeCompetidores', icon: 'sports_martial_arts', route: '/pages/InformeCompetidorListaComponent', rolesAllowed: [] },
-      { label: 'informeEdades', icon: 'sports_martial_arts', route: '/pages/InformeEdadComponent', rolesAllowed: [] },
-      { label: 'InformePresentacionComponent', icon: 'sports_martial_arts', route: '/pages/InformePresentacionComponent', rolesAllowed: [] },
+      { label: 'Técnicas', icon: 'sports_martial_arts', route: '/pages/tecnicas', rolesAllowed: ['Administrador'] },
+      { label: 'Roles', icon: 'supervisor_account', route: '/pages/roles', rolesAllowed: ['Administrador'] },
+      { label: 'Competidores', icon: 'sports', route: '/pages/competidores', rolesAllowed: ['Administrador'] },
+      { label: 'Pelea', icon: 'sports_kabaddi', route: '/pages/peleas', rolesAllowed: ['Administrador'] },
+      { label: 'informeclub', icon: 'bar_chart', route: '/pages/informeclub', rolesAllowed: ['Administrador'] },
+      { label: 'informeCompetidores', icon: 'analytics', route: '/pages/InformeCompetidorListaComponent', rolesAllowed: ['Administrador'] },
+      { label: 'informeEdades', icon: 'calendar_today', route: '/pages/InformeEdadComponent', rolesAllowed: ['Administrador'] },
+      { label: 'InformePresentacionComponent', icon: 'insert_chart', route: '/pages/InformePresentacionComponent', rolesAllowed: ['Administrador'] },
       
   ];
 
